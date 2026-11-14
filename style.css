@@ -73,14 +73,14 @@ img {
 .whisky {
     position: absolute;
     top: -8rem;
-    right: 1rem;
+    right: -2rem;
     width: 20rem;
 }
 
 .pen {
     position: absolute;
     top: 60%;
-    right: 1rem;
+    right: -3rem;
     width: 5rem;
     transform: rotate(150deg);
 }
@@ -88,7 +88,7 @@ img {
 .sticky-note {
     position: absolute;
     top: 70%;
-    left: 1rem;
+    left: -1rem;
     background-color: rgb(255, 255, 184);
     aspect-ratio: 1 / 1;
     transform: rotate(-3deg);
