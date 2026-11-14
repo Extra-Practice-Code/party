@@ -30,6 +30,7 @@ body {
 
 h1 {
     font-weight: normal;
+    margin-top: 0;
 }
 
 main {
@@ -59,13 +60,13 @@ img {
     aspect-ratio: 1 / 1.414;
     margin: 0 auto;
     margin-top: 4rem;
-    padding: 4rem;
-    /* overflow-y: scroll; */
+    padding: 3rem;
+    overflow-y: scroll;
 }
 @media screen and (max-width: 750px) {
     .memo {
         margin-top: 2rem;
-        padding: 1rem;
+        /* padding: 1rem; */
     }
 }
 
@@ -78,7 +79,7 @@ img {
 
 .pen {
     position: absolute;
-    top: 80%;
+    top: 60%;
     right: 1rem;
     width: 5rem;
     transform: rotate(150deg);
@@ -86,8 +87,8 @@ img {
 
 .sticky-note {
     position: absolute;
-    top: 90%;
-    left: 5%;
+    top: 70%;
+    left: 1rem;
     background-color: rgb(255, 255, 184);
     aspect-ratio: 1 / 1;
     transform: rotate(-3deg);
@@ -98,7 +99,7 @@ img {
 /* || DRAGGABLE-ITEM */
 
 .draggable-item {
-    position:absolute; 
+    position:fixed; 
     cursor:grab;
     touch-action: none;
 }
