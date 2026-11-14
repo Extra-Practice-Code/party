@@ -1,0 +1,101 @@
+html {
+    font-size: 20px;
+}
+@media screen and (max-width: 1000px) {
+    html {
+        font-size: 2vw;
+    }
+}
+@media screen and (max-width: 750px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*:-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+h1 {
+    font-weight: normal;
+}
+
+main {
+    width: 100vw;
+}
+.main__inner {
+    padding: 2rem;
+}
+
+img {
+    width: 100%;
+}
+
+.desktop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.memo {
+    background-color: antiquewhite;
+    max-width: 40rem;
+    aspect-ratio: 1 / 1.414;
+    margin: 0 auto;
+    margin-top: 4rem;
+    padding: 4rem;
+    /* overflow-y: scroll; */
+}
+
+.whisky {
+    position: absolute;
+    top: -8rem;
+    right: 1rem;
+    width: 20rem;
+}
+
+.pen {
+    position: absolute;
+    top: 80%;
+    right: 1rem;
+    width: 5rem;
+    transform: rotate(150deg);
+}
+
+.sticky-note {
+    position: absolute;
+    top: 90%;
+    left: 5%;
+    background-color: rgb(255, 255, 184);
+    aspect-ratio: 1 / 1;
+    transform: rotate(-3deg);
+    width: 10rem;
+    padding: 2rem;
+}
+
+/* || DRAGGABLE-ITEM */
+
+.draggable-item {
+    position:absolute; 
+    cursor:grab;
+    touch-action: none;
+}
+.draggable-item img {
+    pointer-events: none;
+}

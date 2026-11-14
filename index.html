@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual Office Party 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="main__inner">
+            <img src="desktop-wood.jpg" class="desktop">
+        <div class="draggable-item whisky">
+            <img src="whisky.png">
+        </div>
+        <div class="draggable-item pen">
+            <img src="pen.png">
+        </div>
+        <div class="draggable-item sticky-note">
+            To do:
+            <br>
+            - Buy tickets<br>
+            - Dry-clean suit<br>
+        </div>
+        <div class="memo">
+            <h1>
+                INTER-OFFICE MEMORANDUM
+            </h1>
+            <p>
+                TO: all self-employed cultural workers, freelance associates & junior ZZP partners<br>
+                FROM: The Party Committee<br>
+                RE: Cancellation of all meetings on Wednesday 9 December
+                <br><br>
+                DATE TO SAVE: Tuesday 8 December 2026 | 17:00
+                <br><br>
+                Dear valued self-employee,
+                <br><br>
+                Please cancel all meetings, calls and deadlines on Wednesday morning 9 December. Management will not be reachable before noon, and neither will you, because you will be attending the Annual Freelance Office Holiday Party on Tuesday December 8. Tell your secretary to hold all calls. You have permission to leave the office early that afternoon, so we can start the festivities at 17:00.
+                <br><br>
+                We are nearing the end of the fiscal year and so it is time to celebrate another year of bold business. You worked the phones, landed the accounts, and sold the big ideas. You were the creative director, the accountant, the PR department and the assistant who brought you fresh coffee every morning and booked in your meetings. Your creative work was undervalued and you worked overtime. You wondered why you are still doing this and daydreamed about contracts and mortgages. But you are still here, doing your own business. You were not replaced by a supercomputer (yet). No matter the challenge, you straightened your tie and showed up to the office every single day.
+                <br><br>
+                Management has noticed, and management is very proud of you. (Management is also you.)
+                <br><br>
+                We consider last year's freelance office holiday party a grand success. The event sold out, spirits were high, and promising business relationships were formed. Because of this outstanding performance, the company has decided to move to larger offices: this year’s event will be held at Delftsestraat 29B. Our associates will welcome us there with open arms and cigars.
+                <br><br>
+                Please join us on Dec 8 in celebrating the accounts we brought in, the deals we closed, the work we delivered, and the taxes we filed. Bring your business cards and your firmest handshake: there will be networking, performance reviews and team building with the colleagues you never met. Of course our CEO will once again take the floor with a speech to set the course for an even bolder year ahead.
+                <br><br>
+                Attendance is strongly encouraged by the Board.
+                <br><br>
+                CALL FOR PITCHES
+                <br><br>
+                The creative department is now accepting pitches for the evening programme. We're looking for DJs, slide presentations, demos of new revolutionary products or ideas, performances, and anything else that would impress the client. Send a short pitch to emma@extrapractice.space by 16 November. The most promising pitches will be presented to the Board.
+                <br><br>
+                We look forward to celebrating another year of exceptional self-employment with you.
+                <br><br>
+                Kind regards,
+                <br><br>
+                The Party Committee
+            </p>            
+        </div>
+        </div>
+    </main>
+</body>
+<script>
+// DRAGGABLE
+let activeItem = null;
+let startX, startY, offsetX, offsetY;
+let dragging = false;
+let moved = false;
+const threshold = 5;
+
+document.addEventListener('pointerdown', (e) => {
+    const item = e.target.closest('.draggable-item');
+    if (!item) return;
+    activeItem = item;
+    startX = e.clientX;
+    startY = e.clientY;
+    offsetX = e.clientX - item.offsetLeft;
+    offsetY = e.clientY - item.offsetTop;
+    moved = false;
+    dragging = true;
+    item.setPointerCapture(e.pointerId);
+});
+
+document.addEventListener('pointermove', (e) => {
+    if (!activeItem || !dragging) return;
+
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+
+    if (!moved && Math.hypot(dx, dy) > threshold) {
+        moved = true;
+        activeItem.style.zIndex = 1000; // only bring to front once it's a real drag
+    }
+
+    if (moved) {
+        activeItem.style.left = (e.clientX - offsetX) + 'px';
+        activeItem.style.top = (e.clientY - offsetY) + 'px';
+    }
+});
+
+document.addEventListener('pointerup', () => {
+    dragging = false;
+    activeItem = null;
+});
+
+document.addEventListener('click', (e) => {
+    const item = e.target.closest('.draggable-item');
+    if (item && moved) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+});
+</script>
+</html>
