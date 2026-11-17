@@ -1,6 +1,6 @@
 html {
   font-size: 20px;
-  filter: grayscale(100%);
+  filter: grayscale(40%);
 }
 @media screen and (max-width: 1000px) {
   html {
@@ -43,6 +43,10 @@ main {
 
 img {
   width: 100%;
+}
+
+a {
+  color: #3740a3;
 }
 
 .desktop {
@@ -229,6 +233,15 @@ img {
     top: calc(100svh - 8rem);
     right: -1rem;
     transform: rotate(-3deg);
+  }
+  .sticky-note a.sticky-note__item {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.4rem 0.4rem 0.4rem 0;
+    margin: -0.4rem 0;
+  }
+  .tt-widget {
+    display: none;
   }
 }
 .draggable-item img {
