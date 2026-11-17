@@ -91,6 +91,10 @@ img {
   }
 }
 
+.btw {
+  font-size: 0.8rem;
+}
+
 .whisky {
   position: absolute;
   top: -8rem;
@@ -100,10 +104,10 @@ img {
 
 .pen {
   position: absolute;
-  top: 60%;
-  right: -3rem;
+  top: 40%;
+  right: 12rem;
   width: 6.5rem;
-  transform: rotate(150deg);
+  transform: rotate(170deg);
 }
 
 .cigarette {
@@ -122,12 +126,12 @@ img {
 
 .sticky-note {
   position: absolute;
-  top: 70%;
+  top: 47%;
   right: 2rem;
   width: 10rem;
   aspect-ratio: 3 / 4;
   padding: 1.2rem 1.4rem 1.2rem 2.2rem;
-  transform: rotate(-3deg);
+  transform: translateY(-50%) rotate(-3deg);
   font-family: "Homemade Apple", cursive;
   font-size: 0.8rem;
   color: #1f2a4a;
@@ -224,6 +228,7 @@ img {
     top: calc(100vh - 8rem);
     top: calc(100svh - 8rem);
     right: -1rem;
+    transform: rotate(-3deg);
   }
 }
 .draggable-item img {
@@ -233,4 +238,12 @@ img {
 .signature {
   width: 20rem;
   margin-top: 2rem;
+}
+
+.tt-widget {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 20rem;
+  z-index: 2000;
 }
