@@ -108,8 +108,8 @@ a {
 
 .pen {
   position: absolute;
-  top: 40%;
-  right: 12rem;
+  top: 30%;
+  right: -1rem;
   width: 6.5rem;
   transform: rotate(170deg);
 }
@@ -121,10 +121,26 @@ a {
   width: 25rem;
   transform: rotate(-15deg);
 }
+/* desktop: ashtray and drink overlap the memo edges so they read as draggable */
+@media screen and (min-width: 751px) {
+  .cigarette {
+    width: 30rem;
+    left: calc(50% - 45rem);
+  }
+  .whisky {
+    right: auto;
+    left: calc(50% + 6rem);
+    top: -3rem;
+  }
+  .pen {
+    right: auto;
+    left: calc(50% + 17rem);
+  }
+}
 @media screen and (max-width: 750px) {
   .cigarette {
-    top: 58%;
-    left: -8rem;
+    top: 44%;
+    left: -10rem;
   }
 }
 
@@ -169,6 +185,11 @@ a {
   z-index: 3;
   cursor: grab;
   touch-action: none;
+}
+/* the sticky note always sits under the drink, pen and ashtray */
+.draggable-item.whisky,
+.draggable-item.pen {
+  z-index: 4;
 }
 
 /* || SMOKE */
@@ -229,9 +250,9 @@ a {
     width: 6.5rem;
   }
   .sticky-note {
-    top: calc(100vh - 8rem);
-    top: calc(100svh - 8rem);
-    right: -1rem;
+    top: calc(100vh - 12rem);
+    top: calc(100svh - 14rem);
+    right: -1.5rem;
     transform: rotate(-3deg);
   }
   .sticky-note a.sticky-note__item {
@@ -259,4 +280,13 @@ a {
   right: 1rem;
   width: 20rem;
   z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  animation: tt-fade-in 1s ease 3s forwards;
+}
+@keyframes tt-fade-in {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
 }

@@ -49,13 +49,21 @@
                     Our
                     associates will welcome us there with open arms and cigars. <span class="btw"><i>Please be aware
                             that the location is on the 2nd floor and only accessible via stairs.</i></span>
+
+                    <br><br> Attendance is strongly encouraged by the Board.
                     <br><br>
                     Please join us on Dec 8 in celebrating the accounts we brought in, the deals we closed, and the work
                     we delivered. Bring your business cards and your firmest handshake: there will be networking,
                     performance reviews and team building with the colleagues you never met. Of course our CEO will once
                     again take the floor with a speech to set the course for an even bolder year ahead.
                     <br><br>
-                    Attendance is strongly encouraged by the Board.
+
+
+                    <b>
+                        Please arrive in <a
+                            href="https://www.are.na/emma-verhoeven/annual-freelance-office-holiday-party">proper</a>
+                        business/formal attire. </b>The firm's standards have not changed since 1960.
+
                     <br><br>
                     <b>TICKET ALLOCATION</b>
                     <br><br>
@@ -294,7 +302,7 @@
             moved = true;
             if (activeItem.classList.contains('photo')) {
                 activeItem.style.zIndex = ++photoZ;
-            } else if (!activeItem.classList.contains('cigarette')) {
+            } else if (!activeItem.classList.contains('cigarette') && !activeItem.classList.contains('sticky-note')) {
                 activeItem.style.zIndex = ++topZ;
             }
             activeItem.dataset.moved = 'true';
